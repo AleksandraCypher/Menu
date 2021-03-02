@@ -21,20 +21,31 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        int Number;
+        
         List<Bludo> f = new List<Bludo>();
+        Меню Мое_Меню;
         public MainWindow()
         {
             InitializeComponent();
+            Мое_Меню = new Меню();
+            Julia.ItemsSource = Мое_Меню.menu;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Julia_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            try
+            {
+                if (0 < Convert.ToInt32(Oksana.Text))
+                {
+                    Number = Convert.ToInt32(Oksana.Text);
+                }
+                else MessageBox.Show("Совы не то, чем кажутся");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Печеньки не то, чем кажутся");
+            }
         }
     }
 }

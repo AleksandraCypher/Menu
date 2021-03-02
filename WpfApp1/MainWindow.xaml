@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.485,0.532">
-        <ListView HorizontalAlignment="Left" Name ="Julia" Height="359" VerticalAlignment="Top" Width="186" Margin="28,34,0,0" SelectionChanged="Julia_SelectionChanged">
+        <ListView HorizontalAlignment="Left" Name ="Julia" Height="359" VerticalAlignment="Top" Width="186" Margin="28,34,0,0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -15,17 +15,23 @@
                         <TextBlock Text="  "/>
 
                         <TextBlock Text="{Binding price}"/>
-                        <TextBlock Text=" р"/>
+                        <TextBlock Text=" р "/>
+                        <TextBlock Text="руб., себестоймость: "/>
+                        <TextBlock Text="{Binding sebestoim}"/>
+                        <TextBlock Text="руб., вес: "/>
+                        <TextBlock Text="{Binding ves}"/>
+                        <TextBlock Text="гр., время приготовления: "/>
+                        <TextBlock Text="{Binding time}"/>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <ListBox HorizontalAlignment="Left" Height="101" Margin="249,36,0,0" VerticalAlignment="Top" Width="238" Name="Politkovskaya"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="249,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119" Name="Ekaterina" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="249,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" Name="Ekaterina" IsReadOnly="True" Text="{Binding SelectedItem.name, ElementName=Julia}"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="249,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119" Name="Oksana"/>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="249,261,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119" Name="Naruto" IsReadOnly="True"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="249,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119" TextChanged="TextBox_TextChanged" Name="KimJongUn" IsReadOnly="True"/>
-        <TextBox HorizontalAlignment="Left" Height="31" Margin="249,364,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119" Name="PutinPresidentoftheworld" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="249,261,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.price, ElementName=Julia}" VerticalAlignment="Top" Width="119" Name="Naruto" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="249,313,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.time, ElementName=Julia}" VerticalAlignment="Top" Width="119" Name="KimJongUn" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Height="31" Margin="249,364,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.sebestoim, ElementName=Julia}" VerticalAlignment="Top" Width="119" Name="PutinPresidentoftheworld" IsReadOnly="True"/>
         <ListView HorizontalAlignment="Left" Height="250" Margin="544,38,0,0" VerticalAlignment="Top" Width="213" Name="Bulkfrog">
             <ListView.View>
                 <GridView>
@@ -33,7 +39,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="В заказ" HorizontalAlignment="Left" Margin="400,233,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.5,0.5" Height="63">
+        <Button Content="В заказ" HorizontalAlignment="Left" Margin="400,233,0,0" VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.5,0.5" Height="63" Click="Button_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

@@ -10,7 +10,7 @@ namespace WpfApp1.Modeli
     {
         // название блюда, цена, себестоимость, вес и длительность приготовления в минутах или секундах.
         string name { get; set; }
-        int pricee { get; set; }
+        int price { get; set; }
         int sebestoim { get; set; }
         int ves { get; set; }
         int time { get; set; }

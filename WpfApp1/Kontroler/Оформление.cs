@@ -33,7 +33,7 @@ namespace WpfApp1.Kontroler
             Itog = 0;
             foreach (Заказ Bogini in Islam)
             {
-                Itog = Bogini.eda.pricee * Bogini.Количество + Itog;
+                Itog = Bogini.eda.price * Bogini.Количество + Itog;
             }
             Time = 0;
             foreach (Заказ Bogini in Islam)
