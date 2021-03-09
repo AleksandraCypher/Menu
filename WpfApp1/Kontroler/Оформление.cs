@@ -13,6 +13,7 @@ namespace WpfApp1.Kontroler
         public int Time;
         public int Sebest;
         public int Сash;
+        public string Name;
         public List<Заказ> Islam = new List<Заказ>();
         public List<Заказы> Lipton = new List<Заказы>();
         public Оформление()
@@ -28,7 +29,7 @@ namespace WpfApp1.Kontroler
             Islam.Add(Lipton);
             return true;
         }
-        public bool Ovormit()
+        /*public bool Ovormit()
         {
             Itog = 0;
             foreach (Заказ Bogini in Islam)
@@ -59,6 +60,6 @@ namespace WpfApp1.Kontroler
             Lipton.Add(Zakazy);
             Islam = new List<Заказ>();
             return true;
-        }
+        }*/
     }
 }

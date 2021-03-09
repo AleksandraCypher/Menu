@@ -26,7 +26,23 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ListBox HorizontalAlignment="Left" Height="101" Margin="249,36,0,0" VerticalAlignment="Top" Width="238" Name="Politkovskaya"/>
+        <ListView HorizontalAlignment="Left" Height="101" Margin="249,36,0,0" VerticalAlignment="Top" Width="238" Name="Politkovskaya">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding eda.name}"/>
+                        <TextBlock Text=" "/>
+
+                        <TextBlock Text="*"/>
+                        <TextBlock Text="{Binding Количество}"/>
+
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding eda.time}"/>
+                        <TextBlock Text="мин "/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="249,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" Name="Ekaterina" IsReadOnly="True" Text="{Binding SelectedItem.name, ElementName=Julia}"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="249,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="119" Name="Oksana"/>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="249,261,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.price, ElementName=Julia}" VerticalAlignment="Top" Width="119" Name="Naruto" IsReadOnly="True"/>
@@ -49,10 +65,10 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="623,308,0,0" Name ="FinalpriceNavalny" IsReadOnly="True"/>
         <Button Content="Завершение" HorizontalAlignment="Left" Margin="616,363,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Очищение" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="401,322,0,0"/>
-        <Label Content="Меню" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,6,0,0"/>
+        <Label Content="
+               " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,6,0,0"/>
         <Label Content="Заказ" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,9,0,0"/>
         <Label Content="Выбранное блюдо" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="383,158,0,0"/>
         <Label Content="Название" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,135,0,0"/>
@@ -62,6 +78,7 @@
         <Label Content="Себестоимость" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="251,338,0,0"/>
         <Label Content="Все заказы" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="546,12,0,0"/>
         <Label Content="Итог:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="576,304,0,0"/>
+        <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="620,307,0,0" Height="24" Width="122" Name="FinalpriceNavalny"/>
 
     </Grid>
 </Window>
